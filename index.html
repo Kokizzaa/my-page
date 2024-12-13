@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès Protégé</title>
+    <script>
+        function verifyPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = "18042015"; // Remplacez par votre mot de passe
+            if (password === correctPassword) {
+                // Affichez l'image si le mot de passe est correct
+                document.getElementById('image').style.display = 'block';
+                document.getElementById('form-container').style.display = 'none';
+            } else {
+                // Affichez un message d'erreur
+                alert('Mot de passe incorrect. Réessayez.');
+            }
+        }
+    </script>
+    <style>
+        #image {
+            display: none; /* Masque l'image par défaut */
+            margin-top: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entrez le mot de passe pour voir l'image</h1>
+    <div id="form-container">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button onclick="verifyPassword()">Valider</button>
+    </div>
+    <div id="image">
+        <h2>Voici votre image :</h2>
+        <img src="votre-image.jpg" alt="Image protégée" style="max-width: 100%; height: auto;">
+    </div>
+</body>
+</html>
